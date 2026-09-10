@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Proxer.me Autoplay",
+  "version": "1.0.0",
+  "description": "Automatically plays the next episode on Proxer.me and enters fullscreen",
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://proxer.me/*",
+    "*://www.proxer.me/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://proxer.me/*", "*://www.proxer.me/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Proxer.me Autoplay"
+  },
+  "icons": {
+    "16": "images/icon-16.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  }
+}
